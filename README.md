@@ -52,7 +52,6 @@ while not os.path.exists(output_file):
 with open(output_file, "r") as f:
     response_data = json.load(f)
 
-# This is just prinintg to console.
 print(json.dumps(response_data, indent=4))
 
 Something to note:
