@@ -17,6 +17,7 @@ To request data from the microservice you must:
    - One or more category keys each with a value of an int representing the percentage allocation.
 
 Example python code to create the request file:
+
 ----------------------------
 
 import json
@@ -43,6 +44,7 @@ To receive data from the microservice your main program must:
 2. Once the file appears then read and parse the JSON.
 
 Example python code to read the response:
+
 ----------------------------
 
 import json
