@@ -17,6 +17,7 @@ To request data from the microservice you must:
    - One or more category keys each with a value of an int representing the percentage allocation.
 
 Example python code to create the request file:
+
 import json
 
 request_data = {
@@ -28,6 +29,7 @@ request_data = {
 
 with open("input.json", "w") as f:
     json.dump(request_data, f, indent=4)
+
 
 Something to note:
 - The microservice will assumes  "input.json" is valid meaning percentages must sum to 100%.
