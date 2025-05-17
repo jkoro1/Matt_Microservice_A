@@ -73,21 +73,22 @@ def write_output_file(file_path, data):
 
 
 if __name__ == "__main__":
-    # Alert microservice is listening for the INPUT_FILE.
-    print(f"Listening for {INPUT_FILE}...")
+    print(f"Microservice is running. Waiting for {INPUT_FILE}...")
 
-    # Check for INPUT_FILE in main directory every 1 second.
-    while not os.path.exists(INPUT_FILE):
-        time.sleep(1)  
+    while True:
+        if os.path.exists(INPUT_FILE):
+            print(f"\n{INPUT_FILE}. Processing...")
 
-    # Alert microservice has found and is begining to work.
-    print(f"{INPUT_FILE} found.")
-    print("Working...")
-    input_data = read_input_file(INPUT_FILE)
-    
-    # If INPUT_FILE is able to be read, perform calculations and construct.
-    if input_data:
-        output_data = calculate_allocations(input_data)
-        # If output_data is valid, write it to the OUTPUT_FILE json file. 
-        if output_data:
-            write_output_file(OUTPUT_FILE, output_data)
+            input_data = read_input_file(INPUT_FILE)
+            if input_data:
+                output_data = calculate_allocations(input_data)
+                if output_data:
+                    write_output_file(OUTPUT_FILE, output_data)
+                    print("Processing complete. Awaiting next input...")
+
+            # Delete the input file after processing
+            time.sleep(10)
+            os.remove(INPUT_FILE)
+
+        # Sleep before checking again
+        time.sleep(1)

@@ -1,8 +1,5 @@
 {
-    "total": 3543,
-    "Food": 354,
-    "Mortgage": 885,
-    "Utilities": 708,
-    "gas": 885,
-    "Credit Card": 708
+    "total": 1000,
+    "bills": 900,
+    "food": 100
 }
