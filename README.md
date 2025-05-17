@@ -83,3 +83,8 @@ Example output.json:
     "housing": 600,
     "groceries": 400
 }
+
+----------------------------------------------------------------------
+UML Diagram
+![UML_Diagram](https://github.com/user-attachments/assets/9eceb0d1-7600-4f82-adac-107e8b54ff07)
+
